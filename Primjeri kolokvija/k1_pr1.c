@@ -11,7 +11,7 @@ int main()
     char X[N];
     unsigned n;  //zeljeni broj znakova za unos u niz
     
-    do{
+    do{                                                        //ponavlja se ako korisnik upise veci broj od 50
         puts("Koliko znakova zelite upisati u niz (MAX 50)");
         scanf("%u", &n);
     }while( n > 50);
