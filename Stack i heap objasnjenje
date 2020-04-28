@@ -1,0 +1,43 @@
+Memorija je podijeljena na stack i heap dio koji se razlikuju po mnogo stvari.
+
+Stack:
+
+1.  Brz pristup spremljenim varijablama.
+2.  Mala kolicina memorije (zavisi do racunala ali otprilike par megabajta). Zbog ovoga treba bit pazljiv kod
+    spremanja veikih nizova jer se moze prekoraciti limit pa dolazi do bugova.
+3.  Prima samo lokalne varijable. Ovo znaci da se na njemu nalaze samo varijable funkcije unutar koje se nalazimo.
+    Kada izademo iz te funkcije te varijable se brisu. Zbog toga ne mozemo tek tako pristupiti varijablama iz funkcija koje
+    trenutno nisu pokrenute.
+4.  Varijable se automatski spremaju na slobodnim adresama
+5.  Ne mozemo mijenjati velicinu varijabli koje su na stacku. Primjer toga su nizovi:
+    Ako inicijaliziramo niz: int A[5], on se sprema na stack te ne mozemo poslije mijenjati njegovu velicinu niti ga
+    opet inicijalizirati sa drugom velicinom.
+
+Heap:
+
+1.  Velicina ovisi o dostupnoj memoriji na tvrdom disku(Mnogo veca od stacka)
+2.  Relativno sporiji pristup od stacka
+3.  Sprema globalne varijable
+4.  Problem je sto se s vremenom moze dogoditi preklapanje adresa 
+5.  Moramo obratiti paznju na adrese na koje spremamo varijable da se nebi preklapale
+6.  Moguce je promjeniti velicine varijabli
+
+    Primjer
+ 
+ #define MAX 5   //konstante se spremaju na heap te njima mozemo pristupiti bilo gdje
+ void funkcija(void);
+ int main()
+    {
+        int x = 5;   //ovo je lokalna varijabla koja se sprema na stack dok je pokrenuta funkcija main()
+        funkcija();
+    }
+
+void funkcija(void)
+{
+    printf("%d", x);  //ova linija ce vratiti gresku jer je varijablu "x" nismo kao argument prebacili iz main() u funkciju()
+                        stoga se ona izbrisala sa stacka kada smo pokrenuli funkciju()
+
+    printf("%d", MAX);  //ova linija bi se izvrsila jer je rijec o globalnoj varijabli koja se nalazi na heapu
+    return;
+}
+
