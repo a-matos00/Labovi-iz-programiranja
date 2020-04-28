@@ -30,6 +30,8 @@ Heap:
     {
         int x = 5;   //ovo je lokalna varijabla koja se sprema na stack dok je pokrenuta funkcija main()
         funkcija();
+            
+        return 0;
     }
 
 void funkcija(void)
