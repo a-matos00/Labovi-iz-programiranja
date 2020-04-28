@@ -46,19 +46,34 @@ int main()
     
     puts("Ispis nasumicnih brojeva");
     
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < 5; i++)                 //ispis nasumicnih brojeva unutar intervala
         printf("%d\n", slbroj(a,b));
 
     return 0;  
 }
 
-int slbroj(int min, int max)
+/*postoji puno razlicitih nacina za generiranje nasumicnih brojeva unutar intervala pa mozemo sami odabrat koji zelimo, a lako se
+    nadu na internetu. Nije toliko ni bitno razumit kako funkcionira pojedeni mehanizam jer su jako komplicirani, zato je bolje
+    naucit jednog napamet a prepourucan ovog zakomentiranog na dnu koda.
+*/
+
+
+int slbroj(int min, int max)         
 {
-    int br_mogucih = max - min + 1;
-    int nova_granica = RAND_MAX - (RAND_MAX % br_mogucih);
+    int br_mogucih = max - min + 1;                           
+    int nova_granica = RAND_MAX - (RAND_MAX % br_mogucih);    
     int sluc_broj = rand();
 
     while(sluc_broj > nova_granica)
         sluc_broj = rand();
-    return sluc_broj % br_mogucih + min;
+    return sluc_broj % br_mogucih + min ;
 }
+
+/* Ova funkcija koristena u vjezbama moze se jednostavnije zapisat i cini istu stvar sa samo jednon linijom koda
+
+int slbroj(int min, int max)         
+{
+    return rand() % (max + 1 - min) + min; 
+}
+
+*/
