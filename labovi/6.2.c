@@ -33,7 +33,7 @@ int main()
     pniz = (int *)malloc(n * sizeof(int)); //objasnjeno na vrhu
 
     for( i = 0; i < n; i++){
-        printf("Unesite %d. clan niza\n", i);
+        printf("Unesite %d. clan niza\n", i+1);
         scanf("%d", pniz + i);
     }
     puts("Ispis niza");
