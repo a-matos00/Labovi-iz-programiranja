@@ -36,13 +36,17 @@ int main()
         printf("Unesite %d. clan niza\n", i+1);
         scanf("%d", pniz + i);
     }
+    
     puts("Ispis niza");
+
     for( i = 0; i < n; i++){
         printf("%d, ", *(pniz + i));
     }
     puts("");
+    
     slozi(n,pniz);
-     puts("Ispis niza");
+
+     puts("Ispis slozenog niza");
     for( i = 0; i < n; i++){
         printf("%d, ", *(pniz + i));
     }
@@ -53,9 +57,9 @@ void slozi( int n, int *p)
 {
     int i,j,temp;
 
-    for(i = 0; i < n-1; i++)
+    for(i = 0; i < n-1; i++)         //selection sort
         for(j = i+1; j < n; j++){
-            if( *(p + i) > *(p + j)){
+            if( *(p + i) > *(p + j)){     // *(p + i) ==> vrijednost na adresi oznacenoj pokazivacem (p + i);
                 temp = *(p+i);
                 *(p+i) = *(p+j);
                 *(p+j) = temp;
