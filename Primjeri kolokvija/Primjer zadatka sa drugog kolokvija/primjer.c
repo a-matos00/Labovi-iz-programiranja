@@ -1,5 +1,5 @@
 /*  
-    1. Argumenti funkcije main:
+    1. Argumetnti funkcije main:
         a) int argc --> ovaj argument ne upisujemo u terminalu vec ga racunalo samo odreduje, on nam govori koliko
            argumenata smo upisali ukljucujuci i "./a.out". npr. za "./a.out 1 2 3" ==> argc == 4
         b) char *argv[] je niz pokazivaca na nizove znakova jer se argumenti zapisuju kao znakovi, odnosno
@@ -14,6 +14,9 @@
     
     3. feof() --> "end of file"
        a) funkcija vraca "0" kada dodemo do kraja datoteke
+
+    4. U terminalu prvo kompajliramo: "gcc primjer.c"
+       Zatim: "./a.out tekst.txt nova_datoteka.txt"s
 */
 
 
@@ -33,7 +36,7 @@ int main(int argc, char *argv[])
         puts("Greska");
     }
 
-    while( feof(in) != 0)       
+    while( !feof(in))       
     {
         znak = fgetc(in);   //uzimamo jedan znak iz prve datoteke
     
