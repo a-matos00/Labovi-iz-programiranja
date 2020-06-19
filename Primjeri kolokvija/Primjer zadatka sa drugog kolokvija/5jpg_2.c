@@ -14,7 +14,7 @@ int main()
     pa = malloc( sizeof(char) * 50); // alociramo mjesta za 50 znakova niza
     
     
-    fgets( pa, 50, stdin); //upisujemo znakove u prvi niz
+    fgets( pa, 50, stdin); //upisujemo znakove u prvi niz ==> mozda nece radit na ispitu zbog nekih tehnickih stvari, pa bi bilo dobro nac neki drugi nacin za upisat znakove
     
     br = prebroj(pa, &br); // funkcija nam vraca broj znakova za drugi niz
     pb = malloc(sizeof(char) * br);
