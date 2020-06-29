@@ -2,7 +2,7 @@
 
     1. Petlja se izvrsava sve dok ne unesemo prazni redak tj. da je broj znakova retka "0".
     2. Unosimo redak teksta u niz rec[80]
-    3. Pomocu funkcije strlen() spremamo broj redaka u varijablu, ali moramo oduzeti jedan jer ta funkcija kao dio retka ubraja '\n'
+    3. Pomocu funkcije strlen() spremamo broj rijeci u varijablu, ali moramo oduzeti jedan jer ta funkcija kao dio retka ubraja '\n'
     4. Ako smo unijeli prazni niz petlja se prekida
     5. Ako smo unijeli valjani redak teksta brojac redaka se povecava
     6. Realociramo niz koristeci funkciju realloc()
