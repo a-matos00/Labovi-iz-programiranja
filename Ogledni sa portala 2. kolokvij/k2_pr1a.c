@@ -39,8 +39,8 @@ int main()
     
     func(klubovi, br_klubova); //pozivamo funkciju koja ce ispisati ime kluba sa najvecom gol razlikom
 
-    
-    
+    fclose(tablica);
+ 
     return 0;
 }
 
